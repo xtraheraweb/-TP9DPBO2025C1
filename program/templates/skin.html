@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <title>Mahasiswa</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #fff0f3 0%, #ffebf0 100%);
+      min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .navbar {
+      background: linear-gradient(135deg, #ff99b5 0%, #ff8fa3 100%) !important;
+      box-shadow: 0 2px 10px rgba(255, 145, 164, 0.3);
+      padding: 1rem 0;
+    }
+
+    .navbar-brand {
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      font-size: 1.3rem;
+    }
+
+    .container-fluid {
+      padding: 2rem;
+    }
+
+    h3 {
+      color: #d14461;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+    }
+
+    h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: #ff99b5;
+    }
+
+    .table {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(255, 99, 134, 0.1);
+      margin-top: 2rem;
+    }
+
+    .thead-light {
+      background: linear-gradient(135deg, #ffb3c6 0%, #ff99b5 100%);
+      color: white;
+    }
+
+    .thead-light th {
+      border: none;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+      padding: 1rem 0.75rem;
+    }
+
+    tbody tr {
+      transition: all 0.3s ease;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #fff5f7;
+    }
+
+    tbody tr:hover {
+      background-color: #ffeef2;
+      transform: translateX(5px);
+    }
+
+    tbody td {
+      padding: 1rem 0.75rem;
+      border: none;
+      border-bottom: 1px solid #ffe6eb;
+      vertical-align: middle;
+    }
+
+    .btn-add-data {
+      background: linear-gradient(45deg, #ff99b5, #d14461);
+      color: white;
+      border: none;
+      padding: 12px 32px;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      font-size: 16px;
+      box-shadow: 0 4px 15px rgba(209, 68, 97, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-add-data:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .btn-add-data:hover:before {
+      left: 100%;
+    }
+
+    .btn-add-data:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(209, 68, 97, 0.4);
+    }
+
+    .btn-add-data:active {
+      transform: translateY(-1px);
+      box-shadow: 0 3px 10px rgba(209, 68, 97, 0.4);
+    }
+
+.btn-edit {
+      background: #ff99b5;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      font-size: 0.85rem;
+      margin-right: 5px;
+    }
+
+    .btn-edit:hover {
+      background: #ff8aa6;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(255, 138, 166, 0.3);
+    }
+
+    .btn-delete {
+      background: #dc3545;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      font-size: 0.85rem;
+    }
+
+    .btn-delete:hover {
+      background: #c82333;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(200, 35, 51, 0.3);
+    }
+
+    .responsive-table {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    @media (max-width: 768px) {
+      .container-fluid {
+        padding: 1rem;
+      }
+      
+      .table {
+        font-size: 0.85rem;
+      }
+      
+      .thead-light th {
+        padding: 0.75rem 0.5rem;
+      }
+      
+      tbody td {
+        padding: 0.75rem 0.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#">Mahasiswa</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+  
+  <div class="container-fluid text-center my-4">
+    <div class="row">
+      <div class="col-12">
+        <h3 class="mb-4">TABEL MAHASISWA</h3>
+        <div class="responsive-table">
+          <table class="table" style="text-align: center;">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">NO</th>
+                <th scope="col">NIM</th>
+                <th scope="col">NAMA</th>
+                <th scope="col">TEMPAT</th>
+                <th scope="col">TANGGAL LAHIR</th>
+                <th scope="col">GENDER</th>
+                <th scope="col">EMAIL</th>
+                <th scope="col">TELEPON</th>
+                <th scope="col">AKSI</th>
+              </tr>
+            </thead>
+            <tbody>
+              DATA_TABEL
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-4 d-flex justify-content-center">
+          DATA_BUTTON
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

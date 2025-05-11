@@ -1,5 +1,8 @@
 # Sistem Manajemen Data Mahasiswa
 
+## Janji
+Saya Safira Aliyah Azmi dengan NIM 2309209 mengerjakan Tugas Praktikum 9 dalam mata kuliah Desain dan Pemrograman Berorientasi Objek untuk keberkahanNya maka saya tidak melakukan kecurangan seperti yang telah dispesifikasikan. Aamiin.
+
 ## Desain Program
 
 ### Arsitektur MVP (Model-View-Presenter)
@@ -13,15 +16,15 @@ Aplikasi ini menggunakan pola desain MVP yang memisahkan logika aplikasi menjadi
 │                                                                 │
 │   ┌─────────┐    <communicates>    ┌─────────────┐              │
 │   │  VIEW   │ ◄──────────────────► │  PRESENTER  │              │
-│   └─────────┘                     └─────────────┘              │
-│       ▲                                  ▲                     │
-│       │                                  │                     │
-│       │   <displays>          <updates>  │                     │
-│       │                                  │                     │
-│       ▼                                  ▼                     │
-│   ┌─────────────────────────────────────────────┐              │
-│   │               MODEL                         │              │
-│   └─────────────────────────────────────────────┘              │
+│   └─────────┘                     └─────────────┘               │
+│       ▲                                  ▲                      │
+│       │                                  │                      │
+│       │   <displays>          <updates>  │                      │
+│       │                                  │                      │
+│       ▼                                  ▼                      │
+│   ┌─────────────────────────────────────────────┐               │
+│   │               MODEL                         │               │
+│   └─────────────────────────────────────────────┘               │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
 ```
